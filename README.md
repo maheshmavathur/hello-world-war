@@ -6,3 +6,7 @@ This is the simplest possible Java webapp for testing servlet container deployme
 Created Webhooks and testing it.
 
 Build - mvn clean package
+
+#Error - mvn not found.
+
+Go to the console and sudo apt install maven
