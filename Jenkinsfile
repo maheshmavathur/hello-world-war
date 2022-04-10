@@ -12,7 +12,7 @@ stage('Build') {
             }
         }        
    
-stage('Images Creation') { 
+stage('Image Creation') { 
             steps {
               sh "docker build -t maheshmavathur/imageone:1.0 ."
             }
