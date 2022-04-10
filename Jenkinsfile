@@ -26,8 +26,8 @@ pipeline{
                   steps{
                         sh "docker login -u maheshmavathur -p password1234"
                         sh "docker pull maheshmavathur/helloworldworld:1.0"
-                        sh "docker rm -f /$( docker ps  -a -q --filter ancestor=maheshmavathur/helloworldworld:1.0 )"
-                        sh "docker run -d -p 8090:8080 maheshmavathur/helloworldworld:1.0"
+                        //sh "docker rm -f /$( docker ps  -a -q --filter ancestor=maheshmavathur/helloworldworld:1.0 )"
+                        sh "docker run -d -p 8090:8080 --name container1 maheshmavathur/helloworldworld:1.0"
                   }
             }
       }
