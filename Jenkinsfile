@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'slave1' }
     stages {
-        stage('checkout') { 
+        stage('Clone') { 
             steps {
               sh "git clone https://github.com/maheshmavathur/hello-world-war.git"
             }
