@@ -17,14 +17,14 @@ pipeline{
       }
        stage('publish'){
                   steps{
-                        sh "docker login -u maheshmavathur.jfrog.io -p Icode4*bugs"
+                        sh "docker login -u maheshmavathur.jfrog.io -p 'Icode4*bugs'"
                         sh "docker push maheshmavathur/image:1.0"
                   }
             }
             stage('deploy'){
                   agent { label 'slave2' }
                   steps{
-                        sh "docker login -u maheshmavathur.jfrog.io -p Icode4*bugs"
+                        sh "docker login -u maheshmavathur.jfrog.io -p 'Icode4*bugs'"
                         sh "docker pull maheshmavathur/image:1.0"
                         sh "docker rm -f \$(docker ps  -a -q --filter ancestor=maheshmavathur/image:1.0)"
                         sh "docker run -d -p 8088:8080 maheshmavathur/image:1.0"
